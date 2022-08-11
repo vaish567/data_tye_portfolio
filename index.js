@@ -56,7 +56,7 @@ var Typer = {
       var text = Typer.text.substring(0, Typer.index)
       var rtn = new RegExp('\n', 'g')
 
-      $('#console').html(text.replace(rtn, '<br/>'))
+      $('#console').html(text.replace(rtn, '<div>'))
       window.scrollBy(0, 50)
     }
 
