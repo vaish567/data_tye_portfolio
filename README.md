@@ -1,5 +1,60 @@
-## Hello there
+# 👋 Hi, I'm Vaishnav Parte
 
-My name is Vaishnav Parte and I'm full Stack JS developer. Currently, I'm a fresher with tons of ambitions in software development. I like to code and write about new web technologies. In my leisure time, I like to spend time in open source contribution. I have completed my bachelor's in Information Technology. I enjoy being challenged, interacting with the team, and leading them too. Engaging with projects that require me to work outside my comfort and knowledge set, and also continuing to learn about new languages and development techniques are important to me.
+🎯 **Frontend Developer | UI/UX Collaborator | Learning Go**
 
-## Feel free to make changes in portfolio
+I'm a passionate frontend developer with **4+ years of experience**, focused on building high-performance web applications using modern technologies.
+
+---
+
+## 🚀 What I Do
+
+- 💻 Build fast, scalable UIs with **React.js**, **Next.js**, and **Tailwind CSS**
+- 🔧 Create custom dashboards using **Payload CMS** integrated with **Next.js**
+- 🧠 Lead frontend teams and collaborate closely with design and backend teams
+- 🌱 Currently learning **Go (Golang)** to expand backend skills
+- 🧪 Worked with domains like **Fintech**, **Pharma**, **SaaS**, and **Construction**
+
+---
+
+## 🌟 Highlights
+
+- ✅ Delivered **12+ full-scale projects** using Next.js
+- 👥 Led frontend teams for the past **2+ years**
+- 📦 Integrated Payload CMS with dynamic collections, globals, and SEO-optimized routes
+- 🤝 Strong communication skills with a focus on clear client understanding and delivery
+
+---
+
+## 🛠️ Tech Stack
+
+| Category         | Tools & Frameworks                               |
+| ---------------- | ------------------------------------------------ |
+| **Languages**    | JavaScript, TypeScript, **Go (learning)**        |
+| **Frontend**     | React.js, Next.js, Tailwind CSS                  |
+| **CMS**          | Payload CMS                                      |
+| **UI Libraries** | Material UI, Shadcn/UI, Framer Motion            |
+| **State Mgmt**   | Redux, Zustand                                   |
+| **Tools**        | Git, GitHub, Axios, i18next, SweetAlert, UUID    |
+| **Performance**  | Frontend optimization, lazy loading, SEO routing |
+
+---
+
+## 💼 Current Work
+
+- 🎯 Freelancing at **Innovative Cursor**
+- ⚙️ Leading frontend team at **Myzow Solutions**
+- 🔄 Rebuilding core banking UI for **Finacus** using Material UI & React.js
+
+---
+
+## 💡 Let's Collaborate
+
+If you're building a dashboard, a marketing website, or a full-stack platform—we can craft a modern, scalable solution together.
+
+📫 **Reach Me:**  
+[📧 vaishnav.parte@gmail.com](mailto:vaishnav.parte@gmail.com)  
+🌐 [innovativecursor.com](https://innovativecursor.com)
+
+---
+
+> _“Clean code + smart design = great user experience.”_
