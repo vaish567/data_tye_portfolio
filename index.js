@@ -1,109 +1,134 @@
 var Typer = {
-  text: '',
+  text: "",
   accessCountimer: null,
   index: 0,
   speed: 2,
-  file: '',
+  file: "",
   accessCount: 0,
   deniedCount: 0,
   init: function () {
     accessCountimer = setInterval(function () {
-      Typer.updLstChr()
-    }, 500)
+      Typer.updLstChr();
+    }, 500);
     $.get(Typer.file, function (data) {
-      Typer.text = data
-      Typer.text = Typer.text.slice(0, Typer.text.length - 1)
-    })
+      Typer.text = data;
+      Typer.text = Typer.text.slice(0, Typer.text.length - 1);
+    });
   },
 
   content: function () {
-    return $('#console').html()
+    return $("#console").html();
   },
 
   write: function (str) {
-    $('#console').append(str)
-    return false
+    $("#console").append(str);
+    return false;
   },
 
   addText: function (key) {
     if (key.keyCode == 18) {
-      Typer.accessCount++
+      Typer.accessCount++;
 
       if (Typer.accessCount >= 3) {
-        Typer.makeAccess()
+        Typer.makeAccess();
       }
     } else if (key.keyCode == 20) {
-      Typer.deniedCount++
+      Typer.deniedCount++;
 
       if (Typer.deniedCount >= 3) {
-        Typer.makeDenied()
+        Typer.makeDenied();
       }
     } else if (key.keyCode == 27) {
-      Typer.hidepop()
+      Typer.hidepop();
     } else if (Typer.text) {
-      var cont = Typer.content()
-      if (cont.substring(cont.length - 1, cont.length) == '|')
-        $('#console').html(
-          $('#console')
+      var cont = Typer.content();
+      if (cont.substring(cont.length - 1, cont.length) == "|")
+        $("#console").html(
+          $("#console")
             .html()
             .substring(0, cont.length - 1)
-        )
+        );
       if (key.keyCode != 8) {
-        Typer.index += Typer.speed
+        Typer.index += Typer.speed;
       } else {
-        if (Typer.index > 0) Typer.index -= Typer.speed
+        if (Typer.index > 0) Typer.index -= Typer.speed;
       }
-      var text = Typer.text.substring(0, Typer.index)
-      var rtn = new RegExp('\n', 'g')
+      var text = Typer.text.substring(0, Typer.index);
+      var rtn = new RegExp("\n", "g");
 
-      $('#console').html(text.replace(rtn, '<div>'))
-      window.scrollBy(0, 50)
+      $("#console").html(text.replace(rtn, "<div>"));
+      window.scrollBy(0, 50);
     }
 
     if (key.preventDefault && key.keyCode != 122) {
-      key.preventDefault()
+      key.preventDefault();
     }
 
     if (key.keyCode != 122) {
       // otherway prevent keys default behavior
-      key.returnValue = false
+      key.returnValue = false;
     }
   },
 
   updLstChr: function () {
-    var cont = this.content()
+    var cont = this.content();
 
-    if (cont.substring(cont.length - 1, cont.length) == '|')
-      $('#console').html(
-        $('#console')
+    if (cont.substring(cont.length - 1, cont.length) == "|")
+      $("#console").html(
+        $("#console")
           .html()
           .substring(0, cont.length - 1)
-      )
-    else this.write('|') // else write it
+      );
+    else this.write("|"); // else write it
   },
-}
+};
 
 function replaceUrls(text) {
-  var http = text.indexOf('http://')
-  var space = text.indexOf('.me ', http)
+  var http = text.indexOf("http://");
+  var space = text.indexOf(".me ", http);
 
   if (space != -1) {
-    var url = text.slice(http, space - 1)
-    return text.replace(url, '<a href="' + url + '">' + url + '</a>')
+    var url = text.slice(http, space - 1);
+    return text.replace(url, '<a href="' + url + '">' + url + "</a>");
   } else {
-    return text
+    return text;
   }
 }
 
-Typer.speed = 3
-Typer.file = 'vaishnav.html'
-Typer.init()
+Typer.speed = 3;
+Typer.file = "vaishnav.html";
+Typer.init();
 
-var timer = setInterval('t();', 30)
+var timer = setInterval("t();", 30);
 function t() {
-  Typer.addText({ keyCode: 123748 })
+  Typer.addText({ keyCode: 123748 });
 
   if (Typer.index > Typer.text.length) {
-    clearInterval(timer)
+    clearInterval(timer);
   }
 }
+
+function openModal() {
+  document.getElementById("emailModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("emailModal").style.display = "none";
+}
+
+document.getElementById("inquiryForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  const subject = encodeURIComponent("New Portfolio Inquiry");
+  const body = encodeURIComponent(
+    `Name: ${name}\nPhone: ${phone}\nPurpose: ${message}`
+  );
+
+  window.location.href = `mailto:vaishnav.parte@gmail.com?subject=${subject}&body=${body}`;
+
+  closeModal();
+});
